@@ -141,7 +141,7 @@
         pesanku = valuewish.value;
         if (pesanku) {
           await swalo.fire({ confirmButtonText: "OK", title: "Kirim ke wa aku ya" });
-          location.assign("https://wa.me/6285888403087/?text=${pesanku}");
+          location.assign(`https://wa.me/6285888403087/?text=${pesanku}`);
         } else {
           await swalo.fire({ confirmButtonText: "OK", title: "Jangan dikosongin dong" });
         }

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hai My Love</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://files.dariku.my.id/dkc201/s.css" />
+  </head>
+  <body>
+    <div class="loading"></div>
+    <div class="background"></div>
+    <div class="main">
+      <div class="content">
+        <div class="btn-mulai">
+          <p class="hilang1">Klik Aku</p>
+          <p class="hilang2">Pesan selanjutnya</p>
+          <p class="hilang3">Pesan selanjutnya</p>
+          <p class="hilang4">Kirim Pesan</p>
+        </div>
+      </div>
+    </div>
+    <!-- ============================================= -->
+    <script>
+      // Custom Disini
+      var pengirim = "❤️";
+      var musik = "lagu 1.mp3";
+      var ucapansatu = "Haii Nadiaa, #Semoga kamu masih inget aku yaa, aku mau ngomong sesuatu nih. Aku mau bilang semangat terus kuliahnya, semangat terus aktivitasnya, jangan lupa makan, jangan lupa istirahat, jangan lupa bahagia yaa. Aku mau bilang makasih banyak sama kamu, kamu udah mau jadi temen aku, udah mau dengerin cerita aku, udah mau dengerin keluh kesah aku, aku akan yang selalu ada buat kamu, aku akan selalu support kamu apapun itu.  #Terimakasih yaa..😊";
+      var ucapandua = "Dan aku mau bilang juga setiap kali aku lihat notifikasi dari kamu, rasanya seperti ada semangat baru yang datang. Chat kita selalu bikin senyum sendiri dan kadang-kadang malah sampai ngakak sendiri di sini. Aku suka banget dengan caranya kamu ngobrol, tahu caranya bikin aku tertawa dan juga tertarik untuk tahu lebih banyak tentang kamu. #Kamu tuh kayak membuka jendela baru dalam hidupku, memberi warna yang lebih cerah dan menyenangkan. Meskipun kita belum pernah bertemu langsung, tapi kok rasanya udah dekat banget ya. Kadang-kadang aku membayangkan bagaimana kita bisa ngobrol langsung, sharing cerita, dan ketawa bareng di satu tempat. Aku juga suka membayangkan bagaimana wajahmu, suaramu, dan ekspresimu saat ngobrol. #Siapa tahu suatu hari nanti kita bisa bertemu, kan? Pasti akan jadi momen yang menyenangkan. Sampai saat itu, mari kita terus jaga semangat ngobrol kita dan semoga hubungan kita makin akrab aja. Aku senang banget bisa mengenal kamu, meskipun hanya melalui layar. Semoga kita bisa saling kenal lebih dalam dan membangun hubungan yang lebih dekat. 😊";
+      var ucapantiga = "Sekarang sudah di penutup ucapan, aku mau bilang gak terasa Idul Fitri telah tiba, ya? Selamat Hari Raya Idul Fitri, semoga hari kemenangan ini membawa kebahagiaan dan kesucian bagi kita semua. Meskipun kita masih dalam proses saling mengenal dengan penuh kebersamaan, semoga hubungan ini semakin erat dan penuh berkah di hari yang fitri ini. Mohon maaf lahir dan batin, ya. Semoga kita bisa merayakan Idul Fitri bersama-sama suatu hari nanti.😊";
+      // Untuk ucapan saat ini maksimal 3
+
+      var background = "gambar 1.jpg";
+      var noWhatsapp = "6285888403087";
+
+      async function start() {
+        // Untuk menambah pop up ucapan tambahkan seperti format dibawah ini
+        await swalo.fire({ title: "Haii cantiikk!!" });
+        playMusik();
+        await swalo.fire({ title: "Are you felling okay?" });
+        await swalo.fire({ title: "Aku mau bilang sesuatuuww" });
+        await swalo.fire({ title: "Kepoo gakk??" });
+        await swalo.fire({ title: "Biar gak kagetttt, berdoa duluu" });
+
+        // Dibawah ini jangan diedit
+        $(".loading").fadeOut("slow");
+      }
+
+      async function kirimpesan() {
+        var { value: pesanku } = await swalo.fire({ imageUrl: "https://files.dariku.my.id/mylove/cutie1.gif", title: "Tulis pesan", input: "textarea", confirmButtonText: "Kirim" });
+        klik.play();
+        if (pesanku) {
+          await swalo.fire("Kirim pesannya ke wa aku ya");
+          if (noWhatsapp > 10) location.assign("https://wa.me/" + noWhatsapp + "?text=" + pesanku);
+          else location.assign("https://wa.me/?text=" + pesanku);
+        } else {
+          await swalo.fire({ imageUrl: "https://files.dariku.my.id/mylove/cutie2.gif", confirmButtonText: "Ok", title: "Jangan dikosongin dong" });
+          klik.play();
+          kirimpesan();
+        }
+      }
+    </script>
+    <script src="https://files.dariku.my.id/dkc201/s.js"></script>
+  </body>
+</html>

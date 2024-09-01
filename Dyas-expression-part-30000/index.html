@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script>
+    <script>
+      const swalo = Swal.mixin({ allowOutsideClick: false, showCancelButton: false, customClass: { popup: "border-radius" } });
+    </script>
+    <link rel="stylesheet" href="https://files.dariku.my.id/dk202/style.css" />
+    <title>Spesial Buat Kamu</title>
+  </head>
+  <body>
+    <div class="preload"><p>Loading dulu . . .</p></div>
+    <div class="open">
+      <div>
+        <div class="lope" onclick="ilang()"><i class="love material-icons-sharp"> favorite </i></div>
+        <h3>Klik Love nya</h3>
+      </div>
+    </div>
+    <div class="bg">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="bg-love"></div>
+    <div class="content adascroll contentslide1">
+      <div class="slidekuy1">
+        <p id="typetxt" class="typetxt1"></p>
+        <button id="lanjut" class="lanjut1" onclick="tampilContent2()">Klik untuk Lanjut ya!</button>
+      </div>
+    </div>
+    <div class="content2 contentslide2">
+      <div class="txtPilihHadiah">
+        <p style="max-width: 70vw" class="typetxt2"></p>
+      </div>
+      <div class="hadiahku">
+        <div class="row">
+          <img src="https://files.dariku.my.id/dk202/kado.png" class="kado" />
+          <img src="https://files.dariku.my.id/dk202/kado.png" class="kado" />
+        </div>
+        <div class="row">
+          <img src="https://files.dariku.my.id/dk202/kado.png" class="kado" />
+          <img src="https://files.dariku.my.id/dk202/kado.png" class="kado" />
+        </div>
+      </div>
+    </div>
+
+    <div class="content adascroll contentslide4">
+      <div class="slidekuy2">
+        <p id="typetxt" class="typetxt4"></p>
+        <button id="lanjut" class="lanjut4" onclick="tampilContent5()">Klik untuk Lanjut ya!</button>
+      </div>
+    </div>
+
+    <div class="content contentadascroll contentslide5">
+      <div class="slidekuy">
+        <p id="typetxt" class="typetxt5"></p>
+      </div>
+      <button id="lanjut" class="lanjut5" onclick="tampilContent6()">Klik untuk Lanjut ya!</button>
+    </div>
+
+    <div class="content adascroll contentslide6">
+      <div class="slidekuy3">
+        <p id="typetxt" class="typetxt6"></p>
+        <button id="lanjut" class="lanjut6" onclick="tampilContent3()">Klik untuk Lanjut ya!</button>
+      </div>
+    </div>
+
+    <div class="content2 contentslide3">
+      <div class="txtPilihHadiah">
+        <p class="typetxt3"></p>
+      </div>
+      <div class="formwish">
+        <textarea name="" id="valuewish" rows="7"></textarea>
+      </div>
+      <button class="kirimwish" onclick="sendwish()">Kirim</button>
+    </div>
+
+    <div class="wm">
+      <p></p>
+    </div>
+
+    <script>
+      // ========================
+
+      // Musik
+      musik = "musik1.1.mp3";
+      
+      // Daftar Foto
+      background1 = "foto 1.jpg";
+      background2 = "foto 2.jpg";
+      background3 = "foto 3.jpg";
+      background4 = "foto 4.jpg";
+      background5 = "foto 5.jpg";
+      background6 = "foto 6.jpg";
+
+      // Ucapan Slide 1
+      ucapan1 = "Selamat pagi, Sayangg.##Semoga setelah aku kirim surat ini kita tetep sama-sama terus yaa. Dan semoga juga kamu suka yaa sama surat ini, aku buatnya dari hati. #Hati-hati sih maksudnya. ##hahahaha.. ";
+
+      // Ucapan Slide 2 / Pilihan Kado
+      ucapan2 = "Ada hadiah buat kamu, pilih satu ya";
+      kado1 = "Selamat kamu dapet Kasih sayangku";
+      kado2 = "Selamat kamu dapet Cinta tulusku";
+      kado3 = "Selamat kamu dapet Kasih sayangku";
+      kado4 = "Selamat kamu dapet Cinta tulusku";
+
+      // Ucapan Slide 3
+      ucapan3 = "Haaii Sayang, apa kabarmu? Baik-baik aja kan? Aku harap begitu.##Ada yang mau aku ungkapin nih.. ##Kalo aku pikir-pikir lagi, kita udah lama banget ya bareng-bareng. Banyak banget hal yang udah kita lewatin bareng, dari yang seneng sampai yang bikin pusing. Aku cuma mau bilang, aku bener-bener bersyukur bisa punya kamu di hidupku.##Inget nggak gimana dulu kita pertama kali ketemu? Waktu itu mungkin semuanya masih serba baru dan kita masih nyoba-nyoba ngerti satu sama lain. Tapi sekarang, setelah sekian lama, aku ngerasa kita udah bener-bener nyatu. Kamu selalu tau gimana caranya bikin aku ngerasa lebih baik, bikin aku ketawa, dan bikin aku ngerasa dicintai tanpa syarat. Aku belajar banyak hal dari kamu, tentang kesabaran, pengertian, dan gimana caranya ngejaga hubungan biar tetap kuat.##Aku sering mikirin masa depan kita, apa aja yang bisa kita capai bareng-bareng. Aku pengen kita tetap tumbuh, tetap saling dukung, dan tetep jadi tim solid kayak sekarang. Tapi aku juga penasaran, kamu sendiri gimana sih ngebayangin masa depan kita? Apa aja sih harapan dan impian kamu buat kita ke depan?##Aku pengen kita terus komunikasi kayak gini, biar nggak ada yang ngerasa nggak didenger atau nggak dipahami. Buat aku, kamu itu orang yang paling penting, dan aku pengen kita tetep bareng-bareng, apa pun yang terjadi. Aku cinta kamu, dan aku bener-bener penasaran pengen tau apa yang kamu harapkan dari hubungan kita ke depannya. Yuk, kita ngobrolin ini lebih lanjut. Aku pengen denger semua yang ada di pikiran kamu.";
+      
+      // Ucapan Slide 4
+      ucapan4 = "Prita ##Senyummu menyapaku,#Seperti matahari di pagi hari.#Hatiku berbunga,#Setiap kali kau tersenyum.##Kata-kata tak cukup,#Menggambarkan keajaiban itu.#Kau adalah senyumku,#Yang selalu ku rindukan.##Dya.";
+
+      // Ucapan Slide 5
+      ucapan5 = "Udah di penutupan aja nih.##Jadi, sayang, apapun yang kamu rasain atau pikirin, aku harap kita bisa terus terbuka satu sama lain. Aku tau, nggak selalu gampang buat ngomongin perasaan atau harapan, tapi aku yakin kalau kita berdua jujur dan saling mendengarkan, hubungan kita bakal makin kuat. Kamu tau kan, aku selalu pengen yang terbaik buat kita, dan aku yakin kamu juga ngerasa hal yang sama. Aku pengen kita bisa terus jalan bareng, menghadapi apapun yang ada di depan kita, dan tetep saling dukung.##Aku juga pengen kamu tau kalau aku bakal selalu ada buat kamu, nggak peduli apa yang terjadi. Kita udah sejauh ini, dan aku yakin kita bisa melewati apa pun yang mungkin datang. Aku sayang banget sama kamu, lebih dari yang bisa aku ungkapin dengan kata-kata. Aku bersyukur setiap hari karena kita punya satu sama lain, dan aku nggak sabar buat ngelewatin lebih banyak momen indah sama kamu di masa depan. Aku cinta kamu, sayang, sekarang dan selamanya, dan aku harap kamu juga ngerasa hal yang sama.";
+
+      // Ucapan Slide 6
+      ucapan6 = "Isi apa yang kamu mau ucap disini ya";
+
+      // Watermark
+      tag = "";
+
+      // Pop up setelah kado
+      async function setelahKado(inijanganhapus) {
+        await swalo.fire({ title: "Hahaha lanjut gak nihh", confirmButtonText: "Lanjuttt" });
+
+        inijanganhapus();
+      }
+
+      // Pop up setelah wish
+      async function sendwish() {
+        pesanku = valuewish.value;
+        if (pesanku) {
+          await swalo.fire({ confirmButtonText: "OK", title: "Kirim ke wa aku ya" });
+          location.assign("https://wa.me/6285888403087/?text=${pesanku}");
+        } else {
+          await swalo.fire({ confirmButtonText: "OK", title: "Jangan dikosongin dong" });
+        }
+      }
+    </script>
+    <script src="https://files.dariku.my.id/dk202/scripts.js"></script>
+  </body>
+</html>

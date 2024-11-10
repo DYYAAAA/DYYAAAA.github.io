@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hai My Love</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.4/dist/sweetalert2.all.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://files.dariku.my.id/dkc201/s.css" />
+  </head>
+  <body>
+    <div class="loading"></div>
+    <div class="background"></div>
+    <div class="main">
+      <div class="content">
+        <div class="btn-mulai">
+          <p class="hilang1">Klik Aku</p>
+          <p class="hilang2">Pesan selanjutnya</p>
+          <p class="hilang3">Pesan selanjutnya</p>
+          <p class="hilang4">Kirim Pesan</p>
+        </div>
+      </div>
+    </div>
+    <!-- ============================================= -->
+    <script>
+      // Custom Disini
+      var pengirim = "❤️";
+      var musik = "Happy Birthday - Dangdut Koplo.mp3";
+      var ucapansatu = "Happy Birthday, sayangku! 🥳💕 Nggak kerasa udah enam tahun lebih kita bareng, meskipun jarak kadang suka iseng ngusik, tetep aja perasaan ini nggak berubah sedikit pun. Kamu itu kayak kopi pagi yang aku kangenin tiap hari—meskipun jauh, tetep bikin hangat di hati. Setiap hari bareng kamu, walau lewat chat atau video call, tetep aja ada bahagia yang nggak bisa diganti sama apa pun. #Kamu tuh tau nggak, kayak magnet yang bikin aku terus-terusan balik lagi, ngecek kabar, nungguin cerita-cerita receh kamu. Kadang aku mikir, kok bisa ya kita bertahan sejauh ini? Mungkin karena kamu emang sespesial itu di hidup aku, yang selalu bikin aku yakin buat terus jalan bareng. Dan ya, meskipun kita sering “berantem” gegara hal sepele, tetep aja nggak bikin kapok buat sayang-sayangan lagi.";
+      var ucapandua = "Hari ini aku cuma mau bilang, selamat ulang tahun buat orang yang paling bikin aku bahagia! Semoga semua doa dan harapan kamu segera terkabul ya. Aku juga berharap kita cepet ketemu, biar bisa peluk langsung tanpa ribet sinyal dan buffering. Thank you for always being there walau dari jauh, kamu emang pahlawan super buat hati aku. #So, happy birthday, my hero! 😘🎉 Aku siap nunggu kamu berapa lama pun, karena kamu worth it banget buat ditunggu. Jangan lupa makan kue yang enak dan ingat aku ya, karena aku di sini udah nggak sabar buat ngerayain ulang tahun kamu bareng, one day. I love you more than words, lebih dari yang bisa aku ungkapin. Let’s make this year as amazing as kamu, okay? 🎂💕";
+      var ucapantiga = "Happy 23th ##Nih puisi buat kamu, yang jauh di sana,#meski sinyal kadang ngilang entah ke mana.#LDR bukan halangannya,#karena cintaku masih aja ngotot nunggu kamu di sini, apa adanya.##Dari pagi sampai tengah malam,#aku cek HP, nunggu chat yang lama-lama bikin gregetan.#Kamu sih kadang ngilang tanpa kabar,#tapi tetep aja, hati ini nggak pernah pindah jalur radar.##Biar waktu dan jarak jadi bercanda,#yang penting kita tetep cinta-cintaan tanpa jeda.#Jadi, happy birthday, my love yang jauh di sana,#kamu nggak cuma bikin rindu, tapi juga ketawa!";
+      // Untuk ucapan saat ini maksimal 3
+
+      var background = "gam1.jpg";
+      var noWhatsapp = "6285888403087";
+
+      async function start() {
+        // Untuk menambah pop up ucapan tambahkan seperti format dibawah ini
+        await swalo.fire({ title: "aciee ada yang ulang tahun nih" });
+        playMusik();
+        await swalo.fire({ title: "Are you felling okay?" });
+        await swalo.fire({ title: "Aku mau bilang sesuatuuww" });
+        await swalo.fire({ title: "Kepoo gakk??" });
+        await swalo.fire({ title: "Sudah bangun yaa?? Biar gak kagetttt, berdoa duluu" });
+
+        // Dibawah ini jangan diedit
+        $(".loading").fadeOut("slow");
+      }
+
+      async function kirimpesan() {
+        var { value: pesanku } = await swalo.fire({ imageUrl: "https://files.dariku.my.id/mylove/cutie1.gif", title: "Tulis pesan", input: "textarea", confirmButtonText: "Kirim" });
+        klik.play();
+        if (pesanku) {
+          await swalo.fire("Kirim pesannya ke wa aku ya");
+          if (noWhatsapp > 10) location.assign("https://wa.me/" + noWhatsapp + "?text=" + pesanku);
+          else location.assign("https://wa.me/?text=" + pesanku);
+        } else {
+          await swalo.fire({ imageUrl: "https://files.dariku.my.id/mylove/cutie2.gif", confirmButtonText: "Ok", title: "Jangan dikosongin dong" });
+          klik.play();
+          kirimpesan();
+        }
+      }
+    </script>
+    <script src="https://files.dariku.my.id/dkc201/s.js"></script>
+  </body>
+</html>
